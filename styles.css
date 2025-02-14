@@ -1,0 +1,221 @@
+/* Allgemeine Stile */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Schwarzer Hintergrund */
+    color: #ffffff; /* Weiße Schrift */
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow-x: hidden; /* Verhindert horizontales Scrollen */
+}
+
+/* Container für zentrierten Inhalt */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Futuristische Schrift für Überschriften */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase; /* Großbuchstaben */
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700; /* Goldener Glow */
+}
+
+/* Links */
+a {
+    color: #ffd700; /* Goldene Links */
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    color: #ffffff; /* Weiße Schrift beim Hover */
+    text-decoration: underline; /* Goldener Unterstrich */
+}
+
+/* Header */
+header {
+    width: 100%;
+    background-color: #000000; /* Schwarzer Hintergrund */
+    padding: 20px 0;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(255, 215, 0, 0.5); /* Goldener Schatten beim Scrollen */
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #ffd700; /* Goldene Schrift */
+}
+
+header nav a {
+    margin: 0 15px;
+    font-size: 1.2em;
+    transition: font-size 0.3s ease, text-decoration 0.3s ease, transform 0.3s ease;
+}
+
+header nav a:hover {
+    font-size: 1.3em; /* Schriftgröße vergrößern */
+    text-decoration: underline; /* Goldener Unterstrich */
+    transform: translateY(-5px); /* Bewege den Link nach oben */
+}
+
+/* Hero-Sektion */
+.hero {
+    padding: 150px 20px; /* Mehr Padding für mehr Abstand */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/hero-bg.jpg'); /* Dunkles Overlay mit Hintergrundbild */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box; /* Verhindert Überlauf */
+}
+
+.hero h1 {
+    font-size: 4em;
+    margin: 0;
+    color: #ffd700; /* Goldener Text */
+    text-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700; /* Starker Glow */
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin: 20px 0 0;
+    color: #ffffff;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: #000000; /* Schwarzer Hintergrund */
+    color: #ffd700; /* Goldene Schrift */
+    border: 2px solid #ffd700; /* Goldener Rand */
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    animation: pulse 2s infinite; /* Pulsierende Animation */
+}
+
+.cta-button:hover {
+    background-color: #ffd700; /* Goldener Hintergrund */
+    color: #000000; /* Schwarze Schrift */
+    transform: scale(1.1); /* Vergrößere den Button leicht */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Hauptinhalt */
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box; /* Verhindert Überlauf */
+}
+
+/* Abschnitte */
+section {
+    width: 100%;
+    padding: 80px 20px; /* Mehr Padding für Abstand */
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Feature-Items */
+.feature-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px; /* Abstand zwischen den Feature-Items */
+    padding: 0 20px; /* Padding für bessere Anpassung */
+    box-sizing: border-box; /* Verhindert Überlauf */
+}
+
+.feature-item {
+    flex: 1 1 30%; /* Flexibles Layout für Feature-Items */
+    max-width: 300px;
+    padding: 20px;
+    background-color: rgba(255, 215, 0, 0.1); /* Leicht goldener Hintergrund */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Verhindert Überlauf */
+}
+
+.feature-item:hover {
+    transform: scale(1.05); /* Vergrößere das Element leicht */
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); /* Goldener Schatten */
+}
+
+/* Roadmap-Steps */
+.roadmap-steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px; /* Abstand zwischen den Schritten */
+    padding: 0 20px; /* Padding für bessere Anpassung */
+    box-sizing: border-box; /* Verhindert Überlauf */
+}
+
+.step {
+    flex: 1 1 30%; /* Flexibles Layout für Roadmap-Schritte */
+    max-width: 300px;
+    padding: 20px;
+    background-color: rgba(255, 215, 0, 0.1); /* Leicht goldener Hintergrund */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Verhindert Überlauf */
+}
+
+.step:hover {
+    transform: translateY(-10px); /* Bewege das Element nach oben */
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.5); /* Goldener Schatten */
+}
+
+/* Social-Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Abstand zwischen den Links */
+    padding: 0 20px; /* Padding für bessere Anpassung */
+    box-sizing: border-box; /* Verhindert Überlauf */
+}
+
+.social-links a {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px); /* Bewege den Link nach oben */
+    color: #ffd700; /* Goldene Schrift */
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #000000; /* Schwarzer Hintergrund */
+    text-align: center;
+    margin-top: 50px; /* Abstand zum vorherigen Abschnitt */
+    box-sizing: border-box; /* Verhindert Überlauf */
+}
