@@ -70,13 +70,16 @@ header nav a:hover {
 
 /* Hero-Sektion */
 .hero {
-    padding: 150px 20px; /* Mehr Padding für mehr Abstand */
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/hero-bg.jpg'); /* Dunkles Overlay mit Hintergrundbild */
-    background-size: cover;
-    background-position: center;
+    padding: 0; /* Padding entfernen, damit das Bild den gesamten Bereich ausfüllt */
+    height: 130vh; /* Volle Höhe des Viewports */
+    background-image: url('images/startbild.webp'); /* Pfad zum Bild */
+    background-size: cover; /* Bild deckt den gesamten Bereich ab */
+    background-position: center; /* Bild wird zentriert */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Inhalt vertikal zentrieren */
+    align-items: center; /* Inhalt horizontal zentrieren */
     text-align: center;
-    width: 100%;
-    box-sizing: border-box; /* Verhindert Überlauf */
 }
 
 .hero h1 {
@@ -86,10 +89,12 @@ header nav a:hover {
     text-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700; /* Starker Glow */
 }
 
-.hero p {
+.hero-subtitle {
     font-size: 1.5em;
     margin: 20px 0 0;
-    color: #ffffff;
+    color: #000000; /* Schwarze Schrift */
+    font-weight: bold; /* Fett */
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700; /* Goldener Glow */
 }
 
 .cta-button {
@@ -142,19 +147,76 @@ section.visible {
     transform: translateY(0);
 }
 
+/* About-Sektion */
+.about-content {
+    max-width: 800px; /* Begrenzt die Breite des Textes */
+    margin: 0 auto; /* Zentriert den Inhalt */
+    text-align: center; /* Zentrierter Text */
+}
+
+.key-features {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Abstand zwischen den Links */
+    margin: 20px 0;
+}
+
+.key-features a {
+    color: #ffd700; /* Goldene Links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.key-features a:hover {
+    color: #ffffff; /* Weiße Schrift beim Hover */
+}
+
+/* Token Address Section */
+.token-address {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.token-address h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ffd700; /* Goldene Schrift */
+}
+
+.address-box {
+    background-color: rgba(255, 215, 0, 0.1); /* Leicht goldener Hintergrund */
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #ffd700; /* Goldener Rand */
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.address-box p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #ffffff; /* Weiße Schrift */
+}
+
 /* Feature-Items */
 .feature-list {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px; /* Abstand zwischen den Feature-Items */
+    flex-direction: column;
+    gap: 20px; /* Abstand zwischen den Reihen */
     padding: 0 20px; /* Padding für bessere Anpassung */
     box-sizing: border-box; /* Verhindert Überlauf */
 }
 
+.feature-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Abstand zwischen den Feature-Items */
+    flex-wrap: wrap;
+}
+
 .feature-item {
-    flex: 1 1 30%; /* Flexibles Layout für Feature-Items */
-    max-width: 300px;
+    flex: 1 1 45%; /* Flexibles Layout für Feature-Items (2 pro Reihe) */
+    max-width: 45%; /* Maximale Breite für bessere Lesbarkeit */
     padding: 20px;
     background-color: rgba(255, 215, 0, 0.1); /* Leicht goldener Hintergrund */
     border-radius: 10px;
@@ -167,29 +229,126 @@ section.visible {
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); /* Goldener Schatten */
 }
 
-/* Roadmap-Steps */
-.roadmap-steps {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px; /* Abstand zwischen den Schritten */
-    padding: 0 20px; /* Padding für bessere Anpassung */
-    box-sizing: border-box; /* Verhindert Überlauf */
+/* Animation für Feature-Items */
+@keyframes highlight {
+    0% { background-color: rgba(255, 215, 0, 0.1); }
+    50% { background-color: rgba(255, 215, 0, 0.3); }
+    100% { background-color: rgba(255, 215, 0, 0.1); }
 }
 
-.step {
-    flex: 1 1 30%; /* Flexibles Layout für Roadmap-Schritte */
-    max-width: 300px;
+.feature-item:target {
+    animation: highlight 1.5s ease-in-out;
+}
+
+/* Hall of Fame & Hall of Losers Platzhalter */
+#hall-of-fame-losers {
+    padding: 80px 20px;
+    background-color: rgba(255, 215, 0, 0.05); /* Leicht goldener Hintergrund */
+    text-align: center;
+}
+
+.hall-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Abstand zwischen den Hall-Sektionen */
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hall-section {
+    flex: 1 1 45%; /* Flexibles Layout für die Hall-Sektionen */
+    max-width: 45%; /* Maximale Breite für bessere Lesbarkeit */
     padding: 20px;
     background-color: rgba(255, 215, 0, 0.1); /* Leicht goldener Hintergrund */
     border-radius: 10px;
+    border: 2px solid #ffd700; /* Goldener Rand */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-sizing: border-box; /* Verhindert Überlauf */
 }
 
-.step:hover {
-    transform: translateY(-10px); /* Bewege das Element nach oben */
-    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.5); /* Goldener Schatten */
+.hall-section:hover {
+    transform: scale(1.05); /* Vergrößere das Element leicht */
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); /* Goldener Schatten */
+}
+
+.hall-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #ffd700; /* Goldene Schrift */
+}
+
+.placeholder-box {
+    background-color: rgba(255, 215, 0, 0.1); /* Leicht goldener Hintergrund */
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px dashed #ffd700; /* Gestrichelter goldener Rand */
+}
+
+.placeholder-box p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #ffffff; /* Weiße Schrift */
+}
+
+/* Roadmap-Sektion */
+.roadmap-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.roadmap-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Abstand zwischen den Meilensteinen */
+    position: relative;
+}
+
+.roadmap-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background-color: #ffd700; /* Goldene Linie */
+    transform: translateX(-50%);
+}
+
+.roadmap-item {
+    background-color: rgba(255, 215, 0, 0.1); /* Leicht goldener Hintergrund */
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #ffd700; /* Goldener Rand */
+    position: relative;
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.roadmap-item:nth-child(odd) {
+    margin-left: 0;
+}
+
+.roadmap-item:nth-child(even) {
+    margin-right: 0;
+}
+
+.roadmap-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ffd700; /* Goldene Schrift */
+}
+
+.roadmap-item ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.roadmap-item ul li {
+    margin-bottom: 10px;
+    color: #ffffff; /* Weiße Schrift */
 }
 
 /* Social-Links */
@@ -202,12 +361,14 @@ section.visible {
 }
 
 .social-links a {
-    transition: transform 0.3s ease, color 0.3s ease;
+    color: #ffd700; /* Goldene Schrift */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-links a:hover {
+    color: #ffffff; /* Weiße Schrift beim Hover */
     transform: translateY(-5px); /* Bewege den Link nach oben */
-    color: #ffd700; /* Goldene Schrift */
 }
 
 /* Footer */
